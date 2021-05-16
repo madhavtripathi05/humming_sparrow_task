@@ -10,9 +10,12 @@ class Home extends StatelessWidget {
         automaticallyImplyLeading: false,
         backgroundColor: kPrimaryColor,
         leading: Builder(
-          builder: (context) => IconButton(
-            onPressed: () => Scaffold.of(context).openDrawer(),
-            icon: Icon(Icons.menu),
+          builder: (context) => Container(
+            margin: EdgeInsets.only(left: 18),
+            child: IconButton(
+              onPressed: () => Scaffold.of(context).openDrawer(),
+              icon: Icon(Icons.menu),
+            ),
           ),
         ),
       ),
@@ -53,10 +56,10 @@ class Home extends StatelessWidget {
             children: [
               Container(
                 width: 260,
-                height: 35,
+                height: 45,
                 child: Text(
                     "This is a Title Aliquam facere accusamus possimus labore dicta maxime.",
-                    style: TextStyle(fontWeight: FontWeight.w900),
+                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18),
                     overflow: TextOverflow.clip),
               ),
               Container(
@@ -65,7 +68,7 @@ class Home extends StatelessWidget {
                 child: Text(
                   "This is a long text Aliquam facere accusamus possimus labore dicta maxime.",
                   overflow: TextOverflow.clip,
-                  style: TextStyle(fontWeight: FontWeight.w300),
+                  style: TextStyle(fontWeight: FontWeight.w300, fontSize: 15),
                 ),
               ),
               SizedBox(height: 6),
@@ -74,25 +77,32 @@ class Home extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Icon(
-                      Icons.calendar_today_outlined,
-                      size: 18,
-                    ),
-                    Text(
-                      '03-03-2021',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontWeight: FontWeight.w200),
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.calendar_today_outlined,
+                          size: 18,
+                        ),
+                        SizedBox(width: 3),
+                        Text(
+                          '03-03-2021',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontWeight: FontWeight.w200),
+                        ),
+                      ],
                     ),
                     ClipRRect(
                       borderRadius: BorderRadius.circular(2),
                       child: Container(
-                        height: 18,
+                        height: 20,
                         width: 100,
                         child: Text(
                           'Sports',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.white),
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              fontSize: 16),
                         ),
                         color: Colors.orange.shade800,
                       ),

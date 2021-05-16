@@ -8,14 +8,17 @@ class Profile extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      // backgroundColor: Colors.grey[300],
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: kPrimaryColor,
         leading: Builder(
-          builder: (context) => IconButton(
-            onPressed: () => Scaffold.of(context).openDrawer(),
-            icon: Icon(Icons.menu),
+          builder: (context) => Container(
+            margin: EdgeInsets.only(left: 18),
+            child: IconButton(
+              onPressed: () => Scaffold.of(context).openDrawer(),
+              icon: Icon(Icons.menu),
+            ),
           ),
         ),
       ),
@@ -23,49 +26,53 @@ class Profile extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Column(
-              children: [
-                SizedBox(height: 10),
-                Container(
-                  width: 150.0,
-                  height: 150.0,
-                  decoration: BoxDecoration(
-                    color: const Color(0xff7c94b6),
-                    image: DecorationImage(
-                      image: NetworkImage('https://picsum.photos/300'),
-                      fit: BoxFit.cover,
-                    ),
-                    borderRadius: BorderRadius.all(Radius.circular(100.0)),
-                    border: Border.all(
-                      color: Colors.deepOrangeAccent,
-                      width: 2.0,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 10),
-                Text(
-                  'Dinesh yaduvanshi',
-                  style: TextStyle(
-                      color: Colors.deepOrangeAccent,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 22),
-                ),
-                TextButton(
-                  onPressed: () {},
-                  child: Card(
-                    child: Padding(
-                      padding: const EdgeInsets.all(7.0),
-                      child: Text(
-                        'Edit Profile',
-                        style: TextStyle(color: Colors.deepOrangeAccent),
+            Container(
+              width: width,
+              color: Colors.grey[300],
+              child: Column(
+                children: [
+                  SizedBox(height: 10),
+                  Container(
+                    width: 150.0,
+                    height: 150.0,
+                    decoration: BoxDecoration(
+                      color: const Color(0xff7c94b6),
+                      image: DecorationImage(
+                        image: NetworkImage('https://picsum.photos/300'),
+                        fit: BoxFit.cover,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(100.0)),
+                      border: Border.all(
+                        color: Colors.deepOrangeAccent,
+                        width: 2.0,
                       ),
                     ),
                   ),
-                )
-              ],
+                  SizedBox(height: 10),
+                  Text(
+                    'Dinesh yaduvanshi',
+                    style: TextStyle(
+                        color: Colors.deepOrangeAccent,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 22),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Card(
+                      child: Padding(
+                        padding: const EdgeInsets.all(7.0),
+                        child: Text(
+                          'Edit Profile',
+                          style: TextStyle(color: Colors.deepOrangeAccent),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
             Container(
-              color: Colors.white,
+              // color: Colors.white,
               width: width,
               child: Padding(
                 padding: const EdgeInsets.all(28.0),
@@ -83,7 +90,7 @@ class Profile extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(7.0),
                       child: Text(
                         'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
                         style: TextStyle(
@@ -104,7 +111,7 @@ class Profile extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
                       child: Text(
                         'xxxxxx',
                         style: TextStyle(
@@ -113,6 +120,7 @@ class Profile extends StatelessWidget {
                             fontSize: 16),
                       ),
                     ),
+                    SizedBox(height: 5),
                     Divider(thickness: 0.2, color: Colors.black),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -125,7 +133,7 @@ class Profile extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
                       child: Text(
                         'dd-mm-yy',
                         style: TextStyle(
@@ -146,7 +154,7 @@ class Profile extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
                       child: Text(
                         'Male',
                         style: TextStyle(
@@ -167,7 +175,7 @@ class Profile extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
                       child: Text(
                         '+91 - xxxxxxxxxx',
                         style: TextStyle(
@@ -188,7 +196,7 @@ class Profile extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
                       child: Text(
                         'xxxxxxxxx@gmail.com',
                         style: TextStyle(

@@ -12,9 +12,12 @@ class Videos extends StatelessWidget {
         automaticallyImplyLeading: false,
         backgroundColor: kPrimaryColor,
         leading: Builder(
-          builder: (context) => IconButton(
-            onPressed: () => Scaffold.of(context).openDrawer(),
-            icon: Icon(Icons.menu),
+          builder: (context) => Container(
+            margin: EdgeInsets.only(left: 18),
+            child: IconButton(
+              onPressed: () => Scaffold.of(context).openDrawer(),
+              icon: Icon(Icons.menu),
+            ),
           ),
         ),
       ),
@@ -41,7 +44,7 @@ class Videos extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  height: 10,
+                  height: 6,
                   color: Colors.grey.withOpacity(0.3),
                 ),
                 Stack(
@@ -76,25 +79,27 @@ class Videos extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.w500),
                       ),
-                      SizedBox(height: 5),
+                      SizedBox(height: 10),
                       Container(
                         width: width,
                         child: Text(
                           'Date and Time here',
                           textAlign: TextAlign.start,
-                          style: TextStyle(fontWeight: FontWeight.w300),
-                        ),
-                      ),
-                      SizedBox(height: 5),
-                      Container(
-                        width: width,
-                        child: Text(
-                          'Est ut quaerat nemo natus vero nihil voluptas. Fuga qui eaque enim aut mollitia iste. Rerum sint debitis. Ut eos dolor excepturi tenetur voluptatibus praesentium et qui voluptatem. Corporis eum ratione doloremque omnis tenetur cum dignissimos.',
-                          textAlign: TextAlign.start,
-                          style: TextStyle(fontWeight: FontWeight.w300),
+                          style: TextStyle(
+                              fontSize: 15, fontWeight: FontWeight.w300),
                         ),
                       ),
                       SizedBox(height: 10),
+                      Container(
+                        width: width,
+                        child: Text(
+                          'Est ut quaerat nemo natus vero nihil voluptas. Fuga qui eaque enim aut mollitia iste.',
+                          textAlign: TextAlign.start,
+                          style: TextStyle(
+                              fontSize: 15, fontWeight: FontWeight.w300),
+                        ),
+                      ),
+                      SizedBox(height: 15),
                       Card(
                         elevation: 10,
                         child: Container(
@@ -109,6 +114,7 @@ class Videos extends StatelessWidget {
                           ),
                         ),
                       ),
+                      SizedBox(height: 16),
                       for (int i = 1; i < 4; i++) buildTile(i)
                     ],
                   ),
@@ -145,34 +151,41 @@ class Videos extends StatelessWidget {
                 height: 35,
                 child: Text(
                     "This is a Title Aliquam facere accusamus possimus labore dicta maxime.",
-                    style: TextStyle(fontWeight: FontWeight.w900),
+                    style: TextStyle(fontWeight: FontWeight.w700),
                     overflow: TextOverflow.clip),
               ),
-              SizedBox(height: 6),
+              SizedBox(height: 12),
               Container(
                 width: 220,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Icon(
-                      Icons.calendar_today_outlined,
-                      size: 18,
-                    ),
-                    Text(
-                      '03-03-2021',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontWeight: FontWeight.w200),
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.calendar_today_outlined,
+                          size: 18,
+                        ),
+                        SizedBox(width: 5),
+                        Text(
+                          '03-03-2021',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontWeight: FontWeight.w200),
+                        ),
+                      ],
                     ),
                     ClipRRect(
                       borderRadius: BorderRadius.circular(2),
                       child: Container(
-                        height: 18,
-                        width: 80,
+                        height: 22,
+                        width: 90,
                         child: Text(
                           'Info',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.white),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: Colors.white),
                         ),
                         color: Colors.orange.shade800,
                       ),
